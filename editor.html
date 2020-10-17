@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quick Notes</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Roboto', sans-serif;
+            }
+            section {
+                width: 100%;
+                background-color: #161616;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            #editor {
+                width: 40%;
+                max-width: 40%;
+                border-radius: 10px;
+                background-color: #262626;
+                padding: 32px;
+                color: white;
+                font-size: 18px;
+                text-align: left;
+                max-height: 600px;
+                overflow-y: scroll;
+                outline: none;
+                resize: none;
+                border: 2px solid transparent;
+                transition: 0.1s ease-in-out;
+            }
+            #editor:focus {
+                border-color: #0069ff
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <textarea id="editor" autofocus></textarea>
+        </section>
+
+        <script>
+            let greetings = [
+                "Write away...",
+                "As clean as an empty canvas...",
+                "What's on your mind?...",
+                "Check it twice...",
+                "Write it down...",
+                "To make a long story short...",
+                "Piece of cake...",
+                "A penny for your thoughts...",
+                "Back to the drawing board...",
+            ]
+
+            let randGreet = greetings[Math.floor(Math.random() * greetings.length)]
+            document.getElementById("editor").placeholder = randGreet
+        </script>
+    </body>
+</html>
